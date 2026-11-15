@@ -5,4 +5,5 @@ The goal is to develop stronger software engineering practices by refactoring sm
 
 This refactoring focuses on modularity, separation of tasks, reusable modules and components, and maintaining existing functionality.
 
-## COMP7017 &mdash; Deep Learning Mini-Project
+### Contents
+* COMP7017 &mdash; Deep Learning Mini-Project (in progress)
