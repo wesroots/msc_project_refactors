@@ -4,5 +4,6 @@ This repository contains projects completed during my MSc in Data Science, which
 The goal is to develop stronger software engineering practices by refactoring smaller projects before progressing to more complex work, including my MSc dissertation.
 
 This refactoring focuses on modularity, separation of tasks, reusable modules and components, and maintaining existing functionality.
+---
 
-## COMP7017 &mdash Deep Learning Mini-Project
+## COMP7017 &mdash; Deep Learning Mini-Project
