@@ -32,7 +32,7 @@ def load_classes():
             print("Done.")
         else:
             print(f" - 'full_numpy_bitmap_{cls}.py' already downloaded.")
-    print("\nAll files downloaded successfully.\n")
+    print("All files downloaded.\n")
 
 def prepare_xy_splits() -> tuple[NDArray, NDArray]:
     print("Preparing X/y splits...", end=" ", flush=True)

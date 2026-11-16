@@ -1,7 +1,7 @@
 from comp7017.data import load_classes, prepare_xy_splits, prepare_ttv_splits, preprocess_X, preprocess_y
 
 # Load data
-print("<<< PREPARING DATA >>>")
+print("<<< LOADING & PROCESSING DATA >>>")
 load_classes()
 
 X, y = prepare_xy_splits()
