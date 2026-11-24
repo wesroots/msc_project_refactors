@@ -1,0 +1,15 @@
+- [ ] Lists vs arrays - QUICKLY
+	- [ ] Mem. layouts & dtypes
+	- [ ] Overhead
+- Lists
+	- [ ] Pointers + python object - metadata
+	- [ ] Drawbacks
+- Arrays
+	- [ ] Contiguous blocks
+	- [ ] Cache locality
+- [ ] Memory use
+	- [ ] Methods
+	- [ ] Dynamic sizing - buffer
+	- [ ] Over-allocation
+- [ ] Try/except - briefly
+- [ ] Syntax

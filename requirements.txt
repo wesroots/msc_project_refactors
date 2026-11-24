@@ -1,0 +1,34 @@
+absl-py @ file:///Users/ec2-user/croot/absl-py_1767984409887/work
+astunparse==1.6.3
+brotlicffi @ file:///Users/ec2-user/croot/brotlicffi_1793006839242/work
+certifi @ file:///home/task_179300541075950/croot/certifi_1793006633205/work/certifi
+cffi @ file:///Users/ec2-user/croot/cffi_1786696919083/work
+charset-normalizer @ file:///Users/ec2-user/croot/charset-normalizer_1782917470852/work
+flatbuffers @ file:///Users/ec2-user/croot/python-flatbuffers_1773259270353/work
+gast @ file:///home/task_176821214954721/croot/gast_1768212389841/work
+google-pasta @ file:///Users/ktietz/demo/mc3/conda-bld/google-pasta_1630577991354/work
+grpcio @ file:///Users/ec2-user/croot/grpc-split_1792712356705/work
+h5py @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_9af59qs5yc/croot/h5py_1750863003494/work
+idna @ file:///Users/ec2-user/croot/idna_1791365090155/work
+keras @ file:///Users/ec2-user/croot/keras_1773266411578/work
+markdown-it-py @ file:///Users/ec2-user/croot/markdown-it-py_1787311225825/work
+mdurl @ file:///opt/miniconda3/conda-bld/mdurl_1758552168255/work
+ml_dtypes @ file:///Users/ec2-user/croot/ml_dtypes_1787310921837/work
+mpi4py @ file:///Users/ec2-user/croot/mpi4py_1790166146902/work
+namex @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_6e5bc3tm0x/croot/namex_1755731416062/work
+numpy @ file:///Users/ec2-user/croot/numpy_and_numpy_base_1776190111216/work/dist/numpy-2.2.5-cp310-cp310-macosx_12_0_arm64.whl#sha256=326d9d5013597eccd52c88298745e8d735795390dd35c890e370f499d772402d
+opt_einsum @ file:///Users/ec2-user/croot/opt_einsum_1779874827966/work
+optree @ file:///Users/ec2-user/croot/optree_1786440501267/work
+packaging==26.3
+protobuf @ file:///Users/ec2-user/croot/protobuf_1785887900888/work/bazel-bin/python/dist/protobuf-7.35.1-cp310-abi3-macosx_11_0_arm64.whl#sha256=a5f200078b77b7ca8169a9d9a54eeabe6ec0024e95d3333a71d57987627b8b0d
+pycparser @ file:///Users/ec2-user/croot/pycparser_1792074439419/work
+Pygments @ file:///Users/ec2-user/croot/pygments_1790343971831/work
+PySocks @ file:///Users/ec2-user/croot/pysocks_1790021649039/work
+requests @ file:///Users/ec2-user/croot/requests_1791386615640/work
+rich @ file:///Users/ec2-user/croot/rich_1793276416342/work
+six @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_03myqm7p6o/croot/six_1744271511946/work
+tensorflow @ file:///Users/ec2-user/croot/tensorflow-split_1790013374044/work/tensorflow_pkg/tensorflow-2.21.0-cp310-cp310-macosx_12_0_arm64.whl#sha256=7ea2a2c597e726b74a325f6481b5fd5aa45f937640e6f6f92e99337c93a65354
+termcolor @ file:///opt/miniconda3/conda-bld/termcolor_1762431150311/work
+typing_extensions @ file:///Users/ec2-user/croot/typing_extensions_1784101001783/work
+urllib3 @ file:///Users/ec2-user/croot/urllib3_1790701107741/work
+wrapt @ file:///Users/ec2-user/croot/wrapt_1780652808458/work
