@@ -1,5 +1,5 @@
 # COMP7017 &mdash; Deep Learning: Mini Project
-This project was originally developed as part of my MSc Data Science coursework. It has since been refactored to improve maintainability, reproducibility, computational correctness and extensibility.
+This project was originally developed as part of my MSc Data Science coursework. It is currently being refactored to improve maintainability, reproducibility, computational correctness and extensibility.
 
 ---
 
