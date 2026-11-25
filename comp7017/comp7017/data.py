@@ -6,7 +6,7 @@ os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 import random
 import numpy as np
 import tensorflow as tf
-import urllib
+import urllib.request
 
 from pathlib import Path
 from numpy.typing import NDArray

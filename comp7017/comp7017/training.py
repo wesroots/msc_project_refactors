@@ -29,7 +29,7 @@ def create_callback(name: str, monitor: str = "val_accuracy", path: Path = BMC_P
 
 def fit_model(
         model, X_train, y_train, X_val, y_val, bmc_callback: ModelCheckpoint,
-        batch_size=32, epochs=15, verbose=True
+        batch_size=BATCH_SIZE, epochs=EPOCHS, verbose=True
     ):
 
     start_time = time.perf_counter()
@@ -40,10 +40,9 @@ def fit_model(
         epochs=epochs,
         verbose=verbose,
         validation_data=(X_val, y_val),
-        callbacks=bmc_callback
+        callbacks=[bmc_callback]
     )
 
     train_time = time.perf_counter() - start_time
-    print(f"Elapsed time: {train_time // 60}m {train_time % 60:.0f}s")
-
+    print(f"Elapsed time: {train_time // 60:.0f}m {train_time % 60:.2f}s")
     return hist, train_time

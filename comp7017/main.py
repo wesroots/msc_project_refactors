@@ -1,42 +1,50 @@
 from comp7017.data import load_classes, prepare_xy_splits, prepare_ttv_splits
-from comp7017.tf_models import build_m3, compile_model
+from comp7017.tf_models import build_models, compile_model
 from comp7017.config import ModelContainer
 from comp7017.training import create_callback, fit_model
 
 from keras.models import load_model
 
-# ---------- LOAD DATA ----------
-print("<<< LOADING & PROCESSING DATA >>>")
-load_classes()
+def main():
 
-X, y = prepare_xy_splits()
+    # ---------- LOAD DATA ----------
+    print("<<< LOADING & PROCESSING DATA >>>")
+    load_classes()
 
-ttv_splits = prepare_ttv_splits(X, y)
+    X, y = prepare_xy_splits()
 
-# ---------- FIT MODEL ----------
-model = build_m3(ttv_splits["X_train"])
-compile_model(model)
+    ttv_splits = prepare_ttv_splits(X, y)
 
-print(f"<<< CONSTRUCTING & FITTING MODEL >>>")
-callback, bmc_path = create_callback(model.name)
-hist, train_time = fit_model(
-    model=model,
-    X_train=ttv_splits["X_train"],
-    y_train=ttv_splits["y_train"],
-    X_val=ttv_splits["X_val"],
-    y_val=ttv_splits["y_val"],
-    bmc_callback=callback
-)
+    # ---------- FIT MODEL ----------
+    print("Construction model...", end=" ", flush=True)
+    model_generator = build_models(ttv_splits["X_train"])
+    print("Done.")
 
-print("Loading best checkpoint weights...", end=" ", flush=True)
-bmc_model = load_model(bmc_path)
-print("Done")
+    for model in model_generator:
+        print(f"<<< CONSTRUCTING & FITTING MODEL ({model.name}) >>>")
+        compile_model(model)
 
-model_container = ModelContainer(
-    tf_model=bmc_model,
-    history=hist,
-    train_time=train_time,
-    X_test=ttv_splits["X_test"],
-    y_test=ttv_splits["y_test"]
-)
+        callback, bmc_path = create_callback(model.name)
+        hist, train_time = fit_model(
+            model=model,
+            X_train=ttv_splits["X_train"],
+            y_train=ttv_splits["y_train"],
+            X_val=ttv_splits["X_val"],
+            y_val=ttv_splits["y_val"],
+            bmc_callback=callback
+        )
 
+        print("Loading best checkpoint weights...", end=" ", flush=True)
+        bmc_model = load_model(bmc_path)
+        print("Done")
+
+        model_container = ModelContainer(
+            tf_model=bmc_model,
+            history=hist,
+            train_time=train_time,
+            X_test=ttv_splits["X_test"],
+            y_test=ttv_splits["y_test"]
+        )
+
+if __name__ == "__main__":
+    main()
