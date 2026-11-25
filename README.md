@@ -9,3 +9,6 @@ This refactoring focuses on modularity, separation of tasks, reusable modules an
 
 ### Contents:
 * **COMP7017 &mdash; Deep Learning:** Mini-Project (in progress)
+* **COMP7019 &mdash; Machine Learning:** Mini-Project (planned)
+* **MAST6105 &mdash; Bayesian Machine Learning:** Mini-Project (planned)
+* **MAST7865 &mdash; Data Science Project:** Dissertation (planned)
