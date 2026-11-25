@@ -1,5 +1,5 @@
 from comp7017.data import load_classes, prepare_xy_splits, prepare_ttv_splits
-from comp7017.tf_models import m3
+from comp7017.tf_models import build_m3, compile_model
 from comp7017.config import ModelContainer
 from comp7017.training import create_callback, fit_model
 
@@ -14,10 +14,13 @@ X, y = prepare_xy_splits()
 ttv_splits = prepare_ttv_splits(X, y)
 
 # ---------- FIT MODEL ----------
-print(f"<<< FITTING MODEL '{m3.name}' >>>")
-callback, bmc_path = create_callback(m3.name)
+model = build_m3(ttv_splits["X_train"])
+compile_model(model)
+
+print(f"<<< CONSTRUCTING & FITTING MODEL >>>")
+callback, bmc_path = create_callback(model.name)
 hist, train_time = fit_model(
-    model=m3,
+    model=model,
     X_train=ttv_splits["X_train"],
     y_train=ttv_splits["y_train"],
     X_val=ttv_splits["X_val"],
