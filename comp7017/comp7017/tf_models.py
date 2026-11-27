@@ -22,7 +22,7 @@ def _build_m0(X_train):
 
     return model
 
-# Model 1 -> First CNN
+# Model 1 -> first CNN
 # One convolutional layer
 def _build_m1(X_train):
     normalizer = layers.Normalization(axis=None)
@@ -45,7 +45,7 @@ def _build_m1(X_train):
 
     return model
 
-# CNN2 -> Iterative refinement
+# CNN2 -> iterative refinement
 # Additional convolutional layer
 def _build_m2(X_train):
 
@@ -103,15 +103,55 @@ def _build_m3(X_train):
 
     return model
 
+# CNN4 -> iterative refinement
+# Architectural
+def _build_m4(X_train):
+
+    normalizer = layers.Normalization(axis=None)
+    normalizer.adapt(X_train)
+
+    model = keras.Sequential([
+        # Input layer
+        layers.Input(shape=(784,)),
+        # Norm. layer
+        normalizer,
+        # Reshape layer
+        layers.Reshape((28,28,1)),
+        # Filter + pooling layer 1
+        layers.Conv2D(filters=32, kernel_size=3, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=(2,2)),
+        # Filter + pooling layer 2
+        layers.Conv2D(filters=32, kernel_size=3, padding="same", activation="relu"),
+        layers.MaxPooling2D(pool_size=(2,2)),
+        # Small regular ANN
+        layers.Flatten(),
+        layers.Dense(units=128, activation="relu"),
+        layers.Dropout(0.45),
+        layers.Dense(units=64, activation="relu"),
+        # Output layer
+        layers.Dense(units=10, activation="softmax"),
+    ], name="cnn_dense_head")
+
+    return model
+
+def _build_m5(X_train):
+    pass
+
 # Compile model
 def compile_model(model, loss = "sparse_categorical_crossentropy", optimizer="adam", metrics=None):
-    print("Compiling model", end=" ", flush=True)
+    print("Compiling model...", end=" ", flush=True)
     if metrics is None:
         metrics = ["accuracy"]
     model.compile(loss=loss, optimizer=optimizer, metrics=metrics)
     print("Done.")
 
+ALL_MODELS = False
+CURR_MODEL = _build_m4
+
 # Build models
 def build_models(X_train):
-    for builder in (_build_m0, _build_m1, _build_m2, _build_m3):
-        yield builder(X_train)
+    if ALL_MODELS:
+        for builder in (_build_m0, _build_m1, _build_m2, _build_m3):
+            yield builder(X_train)
+    else:
+        return CURR_MODEL(X_train)

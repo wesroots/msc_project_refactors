@@ -7,6 +7,8 @@ from keras.models import load_model
 
 def main():
 
+    ALL_MODELS = True
+
     # ---------- LOAD DATA ----------
     print("<<< LOADING & PROCESSING DATA >>>")
     load_classes()
@@ -16,12 +18,12 @@ def main():
     ttv_splits = prepare_ttv_splits(X, y)
 
     # ---------- FIT MODEL ----------
-    print("Construction model...", end=" ", flush=True)
+    print("Constructing model...", end=" ", flush=True)
     model_generator = build_models(ttv_splits["X_train"])
     print("Done.")
 
     for model in model_generator:
-        print(f"<<< CONSTRUCTING & FITTING MODEL ({model.name}) >>>")
+        print(f"<<< CONSTRUCTING & FITTING MODEL ('{model.name}') >>>")
         compile_model(model)
 
         callback, bmc_path = create_callback(model.name)

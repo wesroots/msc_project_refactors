@@ -34,6 +34,8 @@ def fit_model(
 
     start_time = time.perf_counter()
 
+    print(f"Training model '{model.name}'")
+
     hist = model.fit(
         X_train, y_train,
         batch_size=batch_size,
@@ -42,6 +44,8 @@ def fit_model(
         validation_data=(X_val, y_val),
         callbacks=[bmc_callback]
     )
+
+    print("")
 
     train_time = time.perf_counter() - start_time
     print(f"Elapsed time: {train_time // 60:.0f}m {train_time % 60:.2f}s")

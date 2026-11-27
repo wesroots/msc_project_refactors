@@ -43,3 +43,14 @@ class ModelContainer:
         return f"{self.tf_model.name}"
 
     __str__ = __repr__
+
+def generate_pfm():
+    f_1 = [[-1,2,-1], [-1,2,-1], [-1,2,-1]]
+    f_2 = [[-1,-1,-1], [2,2,2], [-1,-1,-1]]
+    f_3 = [[-1,-1,2], [-1,2,-1], [2,-1,-1]]
+    f_4 = [[2,-1,-1], [-1,2,-1], [-1,-1,2]]
+
+    return np.stack(
+        [f_1, f_2, f_3, f_4,],
+        axis=-1
+    )[:,:,np.newaxis,:].astype(np.float32)
