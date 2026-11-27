@@ -1,6 +1,6 @@
 from comp7017.data import load_classes, prepare_xy_splits, prepare_ttv_splits
 from comp7017.tf_models import build_models, compile_model
-from comp7017.config import ModelContainer
+from comp7017.tf_models import ModelContainer
 from comp7017.training import create_callback, fit_model
 
 from keras.models import load_model
